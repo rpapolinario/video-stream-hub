@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StreamHub - Video Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>StreamHub</h1>
+    <p>Curated Streaming & Video Library</p>
+  </header>
+
+  <main class="container">
+    <!-- Featured Player Section -->
+    <section class="featured">
+      <h2>Now Playing</h2>
+      <div class="video-container">
+        <iframe 
+          id="mainPlayer"
+          src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ" 
+          title="Video Player"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <h3 id="videoTitle">Featured Title</h3>
+    </section>
+
+    <!-- Video Selection Grid -->
+    <section class="grid-section">
+      <h2>Video Library</h2>
+      <div class="video-grid">
+        
+        <!-- Video Card 1 -->
+        <div class="video-card" onclick="playVideo('https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ', 'Featured Title 1')">
+          <div class="card-thumb">▶ Play</div>
+          <h4>Featured Title 1</h4>
+        </div>
+
+        <!-- Video Card 2 -->
+        <div class="video-card" onclick="playVideo('https://www.youtube-nocookie.com/embed/L_LUpnjgPso', 'Featured Title 2')">
+          <div class="card-thumb">▶ Play</div>
+          <h4>Featured Title 2</h4>
+        </div>
+
+        <!-- Video Card 3 -->
+        <div class="video-card" onclick="playVideo('https://player.vimeo.com/video/76979871', 'Vimeo Stream Sample')">
+          <div class="card-thumb">▶ Play</div>
+          <h4>Vimeo Stream Sample</h4>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function playVideo(embedUrl, title) {
+      document.getElementById('mainPlayer').src = embedUrl;
+      document.getElementById('videoTitle').innerText = title;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
